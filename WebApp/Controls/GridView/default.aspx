@@ -1,10 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/skin/global.Master" AutoEventWireup="true" CodeBehind="row-databound.aspx.cs" Inherits="WebApp.Controls.GridView.row_databound" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/skin/global.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="WebApp.Controls.GridView._default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <asp:GridView ID="gv1" runat="server"></asp:GridView>
-
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Javascript" runat="server"></asp:Content>

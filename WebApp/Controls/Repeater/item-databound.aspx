@@ -9,10 +9,16 @@
             <ul>
         </HeaderTemplate>
         <AlternatingItemTemplate>
-            <li>Alternating Item</li>
+            <li>
+                Alternating Item
+                <asp:PlaceHolder ID="placeHolder1" runat="server" />
+            </li>
         </AlternatingItemTemplate>
         <ItemTemplate>
-            <li>Item</li>
+            <li>
+                Item
+                <asp:PlaceHolder ID="placeHolder1" runat="server" />
+            </li>
         </ItemTemplate>
         <SeparatorTemplate>
             <li>Separator</li>
@@ -23,3 +29,5 @@
     </asp:Repeater>
 
 </asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Javascript" runat="server"></asp:Content>

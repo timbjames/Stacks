@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\DataGrid\" />
+    <Folder Include="js\mylibs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="skin\global.Master" />

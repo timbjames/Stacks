@@ -9,6 +9,7 @@ namespace WebApp.Controls.Repeater
 {
     public partial class item_databound : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.rptr1.DataSource = Enumerable.Range(0, 10);
@@ -20,8 +21,11 @@ namespace WebApp.Controls.Repeater
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
-
+                Literal lt = new Literal() { Text = string.Format(" Index {0} ", e.Item.ItemIndex.ToString()) };
+                PlaceHolder ph = (PlaceHolder)e.Item.FindControl("placeHolder1");
+                ph.Controls.Add(lt);
             }
         }
+
     }
 }
