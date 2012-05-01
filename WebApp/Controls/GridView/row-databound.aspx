@@ -3,7 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:GridView ID="gv1" runat="server"></asp:GridView>
+    <asp:GridView ID="gv1" runat="server">
+        <Columns>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    Item
+                    <asp:PlaceHolder ID="placeHolder1" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
 
 </asp:Content>
 

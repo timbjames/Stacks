@@ -21,7 +21,9 @@ namespace WebApp.Controls.GridView
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-
+                Literal lt = new Literal() { Text = string.Format(" Index {0} ", e.Row.RowIndex.ToString()) };
+                PlaceHolder ph1 = (PlaceHolder)e.Row.FindControl("placeHolder1");
+                ph1.Controls.Add(lt);
             }
         }
     }

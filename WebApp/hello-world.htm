@@ -23,7 +23,9 @@
     <meta name="viewport" content="width=device-width">
     
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/jquery-notifiR-1.0.css" />
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
     
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
     <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -57,9 +59,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>        window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
+
     <!-- scripts concatenated and minified via build script -->
     <script src="/js/plugins.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/mylibs/jquery-notifiR-1.0.js"></script>
+    <script>        
+        $.notifiR({msg: 'test', type: 'instruct', title: 'notifiR'});
+    </script>
 
     <!-- end scripts -->
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

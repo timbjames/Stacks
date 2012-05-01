@@ -51,14 +51,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\GridView\default.aspx" />
     <Content Include="Controls\GridView\row-databound.aspx" />
+    <Content Include="Controls\Repeater\default.aspx" />
     <Content Include="Controls\Repeater\item-databound.aspx" />
+    <Content Include="css\jquery-notifiR-1.0.css" />
     <Content Include="css\style.css" />
     <Content Include="hello-world.aspx" />
     <Content Include="hello-world.htm" />
+    <Content Include="jquery\default.htm" />
     <Content Include="js\libs\jquery-1.7.1.js" />
     <Content Include="js\libs\jquery-1.7.1.min.js" />
     <Content Include="js\libs\modernizr-2.5.3.min.js" />
+    <Content Include="js\mylibs\jquery-notifiR-1.0.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\script.js" />
     <Content Include="Web.config" />
@@ -70,12 +75,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\GridView\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GridView\row-databound.aspx.cs">
       <DependentUpon>row-databound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\GridView\row-databound.aspx.designer.cs">
       <DependentUpon>row-databound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Repeater\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Repeater\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Repeater\item-databound.aspx.cs">
       <DependentUpon>item-databound.aspx</DependentUpon>
@@ -102,7 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\DataGrid\" />
-    <Folder Include="js\mylibs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="skin\global.Master" />
