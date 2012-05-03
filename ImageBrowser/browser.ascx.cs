@@ -45,9 +45,7 @@ namespace ImageBrowser
             // check to see if mediaFolder is a valid path
             if (!IsValidMediaFolder())
             {
-                Panel pnl = new Panel() { CssClass = "err" };
-                pnl.Controls.Add(new Literal() { Text = errorMsg });
-                this.phError.Controls.Add(pnl);
+                DisplayError();
                 return;
             }
 
@@ -56,6 +54,13 @@ namespace ImageBrowser
                 this.LoadImages();
             }
 
+        }
+
+        private void DisplayError()
+        {
+            Panel pnl = new Panel() { CssClass = "err" };
+            pnl.Controls.Add(new Literal() { Text = errorMsg });
+            this.phError.Controls.Add(pnl);
         }
 
         private bool IsValidMediaFolder()
@@ -129,14 +134,32 @@ namespace ImageBrowser
                     }
                 }
             }
+            bool success = true;
 
             foreach (string s in imagesToDelete)
             {
-                FileInfo fi = new FileInfo(Server.MapPath(mediaFolder + s));
-                fi.Delete();
+                FileInfo fi = new FileInfo(Server.MapPath(mediaFolder + s));                
+                try
+                {
+                       fi.Delete();
+                }
+                catch (Exception ex)
+                {
+                    errorMsg = ex.ToString();
+                    success = false;
+                }
+                if (!success) break;
             }
 
-            this.LoadImages();
+            if (success)
+            {
+                this.LoadImages();
+            }
+            else
+            {
+                DisplayError();
+            }            
+
         }
 
     }
