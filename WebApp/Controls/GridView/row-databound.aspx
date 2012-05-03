@@ -8,6 +8,12 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     Item
+                    <asp:Literal ID="literal1" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    Item
                     <asp:PlaceHolder ID="placeHolder1" runat="server" />
                 </ItemTemplate>
             </asp:TemplateField>

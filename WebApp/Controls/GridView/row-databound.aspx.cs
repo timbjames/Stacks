@@ -21,9 +21,23 @@ namespace WebApp.Controls.GridView
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
+
+                // dynamically adding a control to a placeholder within a row
                 Literal lt = new Literal() { Text = string.Format(" Index {0} ", e.Row.RowIndex.ToString()) };
                 PlaceHolder ph1 = (PlaceHolder)e.Row.FindControl("placeHolder1");
                 ph1.Controls.Add(lt);
+
+                // dynamically finding a control of known type
+                GridViewRow gv = e.Row;
+                TableCell tc = gv.Cells[1];
+                foreach (Control c in tc.Controls)
+                {
+                    if ( c is LiteralControl )
+                    {
+                        ((LiteralControl)c).Text = "YES";
+                    }
+                }
+
             }
         }
     }
