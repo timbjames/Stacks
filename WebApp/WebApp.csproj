@@ -59,6 +59,15 @@
     <Content Include="css\style.css" />
     <Content Include="hello-world.aspx" />
     <Content Include="hello-world.htm" />
+    <Content Include="Images\browse-and-delete.aspx" />
+    <Content Include="Images\media\Chrysanthemum.jpg" />
+    <Content Include="Images\media\Desert.jpg" />
+    <Content Include="Images\media\Hydrangeas.jpg" />
+    <Content Include="Images\media\Jellyfish.jpg" />
+    <Content Include="Images\media\Koala.jpg" />
+    <Content Include="Images\media\Lighthouse.jpg" />
+    <Content Include="Images\media\Penguins.jpg" />
+    <Content Include="Images\media\Tulips.jpg" />
     <Content Include="jquery\default.htm" />
     <Content Include="js\libs\jquery-1.7.1.js" />
     <Content Include="js\libs\jquery-1.7.1.min.js" />
@@ -109,6 +118,13 @@
     </Compile>
     <Compile Include="hello-world.aspx.designer.cs">
       <DependentUpon>hello-world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Images\browse-and-delete.aspx.cs">
+      <DependentUpon>browse-and-delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Images\browse-and-delete.aspx.designer.cs">
+      <DependentUpon>browse-and-delete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="skin\global.Master.cs">

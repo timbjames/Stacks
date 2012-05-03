@@ -4,7 +4,7 @@
         options = $.extend(true, {
             msg: '',
             title: '',
-            modal: true,
+            modal: false,
             autoOpen: true,
             position: 'center',
             zIndex: 99999,
@@ -12,7 +12,8 @@
             stopOnHover: false,
             duration: 2000,
             autoClose: true,
-            fadeOutSpeed: 9000,
+            delay: 3000,
+            fadeOutSpeed: 3000,
             type: 'error'
         }, options);
 
@@ -21,15 +22,22 @@
 
         var modal = $('<div class=\"notifiR-modal\" />');
         var icon = $('<span class=\"ui-icon\" style=\"float: left; margin-right: .3em\" />');
+        var notifiR = $('<div class=\"notifiR\" />');
+
         var title = $('<strong />');
         title.text(options.title);
-        var notifiR = $('<div class=\"notifiR\" />'); //.text(options.msg);
+        
+        /* if modal, then apply */
         if (options.modal) {
             modal.appendTo('body')
             modal.css({ width: wWidth, height: wHeight }).addClass('ui-widget-overlay');
         };
-        notifiR.appendTo('body');
+
+        /* append elements to notifiR and append to body */
+        notifiR.append(icon).append(title).append(' ' + options.msg).appendTo('body');
         notifiR.addClass('ui-corner-all');
+
+        /* switch style based on type */
         switch (options.type) {
             case "error":
                 notifiR.addClass('ui-state-error');
@@ -40,10 +48,10 @@
                 icon.addClass('ui-icon-info');
                 break;
         }
-        notifiR.append(icon).append(title).append(' ' + options.msg);
-
+        
+        /* set the delay and fadeout if autoClose */
         if (options.autoClose) {
-            notifiR.fadeOut(options.fadeOutSpeed, function () { $('.notifiR-modal').remove(); $(this).remove() });
+            notifiR.delay(options.delay).fadeOut(options.fadeOutSpeed, function () { $('.notifiR-modal').remove(); $(this).remove() });
         }
     };
 
