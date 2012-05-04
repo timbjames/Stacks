@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Linq;
 
 namespace WebApp.Controls.GridView
 {
@@ -38,6 +39,11 @@ namespace WebApp.Controls.GridView
                     }
                 }
 
+                // OR
+
+                var children = gv.Cells[1].Controls.Cast<Control>();
+                LiteralControl ltCon = (LiteralControl) children.Where(x => x is LiteralControl).FirstOrDefault();
+                
             }
         }
     }
