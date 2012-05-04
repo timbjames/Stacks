@@ -53,15 +53,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\GridView\default.aspx" />
+    <Content Include="Controls\GridView\listOf-images.aspx" />
     <Content Include="Controls\GridView\row-databound.aspx" />
     <Content Include="Controls\Repeater\default.aspx" />
     <Content Include="Controls\Repeater\item-databound.aspx" />
+    <Content Include="Controls\Repeater\listOf-images.aspx" />
     <Content Include="css\jquery-notifiR-1.0.css" />
     <Content Include="css\style.css" />
     <Content Include="hello-world.aspx" />
     <Content Include="hello-world.htm" />
     <Content Include="Images\browse-and-delete.aspx" />
     <Content Include="Images\browser.ascx" />
+    <Content Include="Images\javascript-preview.htm" />
     <Content Include="Images\media\Desert.jpg" />
     <Content Include="Images\media\Jellyfish.jpg" />
     <Content Include="Images\media\Lighthouse.jpg" />
@@ -90,6 +93,13 @@
     <Compile Include="Controls\GridView\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GridView\listOf-images.aspx.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\listOf-images.aspx.designer.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GridView\row-databound.aspx.cs">
       <DependentUpon>row-databound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +120,13 @@
     </Compile>
     <Compile Include="Controls\Repeater\item-databound.aspx.designer.cs">
       <DependentUpon>item-databound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Repeater\listOf-images.aspx.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Repeater\listOf-images.aspx.designer.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
     </Compile>
     <Compile Include="hello-world.aspx.cs">
       <DependentUpon>hello-world.aspx</DependentUpon>
