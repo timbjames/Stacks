@@ -52,6 +52,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\GridView\command-argument.aspx" />
     <Content Include="Controls\GridView\default.aspx" />
     <Content Include="Controls\GridView\listOf-images.aspx" />
     <Content Include="Controls\GridView\row-databound.aspx" />
@@ -86,6 +87,13 @@
     <Content Include="_dependencies\ImageBrowser.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\GridView\command-argument.aspx.cs">
+      <DependentUpon>command-argument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\command-argument.aspx.designer.cs">
+      <DependentUpon>command-argument.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GridView\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
