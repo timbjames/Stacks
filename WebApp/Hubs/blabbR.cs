@@ -58,7 +58,7 @@ namespace WebApp.Hubs
 
         private bool TryHandleCommand(string message)
         {
-
+            return true;
         }
 
         private ChatUser AddUser(string newUserName)

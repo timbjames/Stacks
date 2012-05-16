@@ -71,6 +71,7 @@
     <Content Include="Controls\GridView\default.aspx" />
     <Content Include="Controls\GridView\listOf-images.aspx" />
     <Content Include="Controls\GridView\row-databound.aspx" />
+    <Content Include="Controls\ListView\basic-example.aspx" />
     <Content Include="Controls\Repeater\default.aspx" />
     <Content Include="Controls\Repeater\item-databound.aspx" />
     <Content Include="Controls\Repeater\listOf-images.aspx" />
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Controls\GridView\row-databound.aspx.designer.cs">
       <DependentUpon>row-databound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListView\basic-example.aspx.cs">
+      <DependentUpon>basic-example.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ListView\basic-example.aspx.designer.cs">
+      <DependentUpon>basic-example.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Repeater\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

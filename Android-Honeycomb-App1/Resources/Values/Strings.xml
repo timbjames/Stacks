@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btnClickMe">Hello World, Click Me!</string>
+    <string name="ApplicationName">Android-Honeycomb-App1</string>
+    <string name="textView1">This is the default value for textView1</string>
+    <string name="textView2">This is the default value for textView2</string>
+    <string name="btnClear">Reset Count</string>
+    <string name="Yellow">Yellow</string>
+</resources>
