@@ -10,30 +10,29 @@
 <head>
 
     <meta charset="utf-8">
-    
-    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title></title>
+    <title>jQuery UI Datetimepicker Demo 1</title>
     
     <meta name="description" content="">
     
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width">
     
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+    <!-- link to base styling -->
     <link rel="stylesheet" href="/css/style.css" />    
+    <!-- link to jQuery UI styling provided by aspnet CDN -->
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
    
-   <style>
+    <!-- additional styling for this particular plugin -->
+    <style>
         /* css for timepicker */        
         .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
         .ui-timepicker-div dl{ text-align: left; }
         .ui-timepicker-div dl dt{ height: 25px; }
         .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
         .ui-timepicker-div td { font-size: 90%; }
-   </style>
+    </style>
 
 </head>
 <body>
@@ -83,14 +82,23 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script> window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
+    <!-- include jQuery UI for core functionality of DatePicker -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
+
+    <!-- 
+        ************************************************************************************************************************
+        You could also include a jQuery UI fallback here. See http://timjames.me/jquery-and-jquery-ui-fallbacks for more info 
+        ************************************************************************************************************************
+     -->
+
+    <!-- include the jQuery UI datetimepicker plugin -->
     <script src="/js/libs/jquery-ui-datetimepicker.js"></script>
 
-    <!-- scripts concatenated and minified via build script -->
+    <!-- script to perform the magic!-->
     <script>
         $(function () {
-            $('.date-time').datetimepicker();
-            $('#ukFormat').datetimepicker({dateFormat: 'dd-mm-yy'});
+            $('.date-time').datetimepicker(); // selector picks any element with class="date-time"
+            $('#ukFormat').datetimepicker({dateFormat: 'dd-mm-yy'}); // selector picks element with id="ukFormat"
         });
     </script>
    
