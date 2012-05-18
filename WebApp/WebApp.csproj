@@ -87,10 +87,12 @@
     <Content Include="Images\media\Jellyfish.jpg" />
     <Content Include="Images\media\Lighthouse.jpg" />
     <Content Include="Images\media\Tulips.jpg" />
-    <Content Include="jquery\default.htm" />
+    <Content Include="jquery-samples\default.htm" />
+    <Content Include="jquery-ui-samples\datetimepicker.htm" />
     <Content Include="js\libs\jquery-1.7.1.js" />
     <Content Include="js\libs\jquery-1.7.1.min.js" />
     <Content Include="js\libs\jquery.cookie.js" />
+    <Content Include="js\libs\jquery-ui-datetimepicker.js" />
     <Content Include="js\libs\modernizr-2.5.3.min.js" />
     <Content Include="js\mylibs\jquery-blabbR-1.0.js" />
     <Content Include="js\mylibs\jquery-notifiR-1.0.js" />
