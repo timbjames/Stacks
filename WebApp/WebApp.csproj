@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BlabbR\default.htm" />
+    <Content Include="Controls\CheckboxList\default.aspx" />
     <Content Include="Controls\DataList\basic-datalist.aspx" />
     <Content Include="Controls\GridView\command-argument.aspx" />
     <Content Include="Controls\GridView\default.aspx" />
@@ -115,6 +116,13 @@
     <Content Include="_dependencies\ImageBrowser.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CheckboxList\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckboxList\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataList\basic-datalist.aspx.cs">
       <DependentUpon>basic-datalist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
