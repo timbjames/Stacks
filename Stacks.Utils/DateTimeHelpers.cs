@@ -8,6 +8,11 @@ namespace Stacks.Utils
     public class DateTimeHelpers
     {
 
+        public DateTimeHelpers()
+        {
+            string theDate = string.Format("{0}{1} {2}", DateTime.Now.ToString("dd"), GetOrginal(DateTime.Now.Day), DateTime.Now.ToString("MMM"));
+        }
+
         /// <summary>
         /// Returns either th, st, nd, rd for a day number
         /// </summary>
