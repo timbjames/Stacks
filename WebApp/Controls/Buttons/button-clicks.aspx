@@ -13,6 +13,8 @@
         <asp:Button ID="btnOne" runat="server" Text="Button One" OnClick="button1_Click" ClientIDMode="Static" />
         <br />
         <asp:Button ID="btnTwo" runat="server" Text="Button Two" onclick="Button3_Click" />        
+        <br />
+        <asp:Button ID="btnThree" runat="server" Text="Button Three" onclientclick="javascript: alert('hello world'); return false;" />
     </div>
     </form>
 </body>
