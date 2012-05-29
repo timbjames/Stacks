@@ -16,5 +16,5 @@
 	background: linear-gradient(top,  rgba(215,0,0,1) 0%,rgba(255,255,255,1) 2%,rgba(216,0,1,1) 3%,rgba(192,0,0,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d70000', endColorstr='#c00000',GradientType=0 ); /* IE6-8 */
 }
-a.cancel span { float: right; width: 15px; height: 15px; margin: 2px 9px 0 10px; background: url(cross.png) no-repeat 0px 0px; }
+a.cancel span { float: right; width: 15px; height: 15px; margin: 2px 9px 0 10px; background: url(../img/cross.png) no-repeat 0px 0px; }
 #mask { position: absolute; left: 0; top: 0; z-index: 9000; background-color: #000; display: none; }

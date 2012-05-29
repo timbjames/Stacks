@@ -1,4 +1,15 @@
-﻿(function ($) {
+﻿/*
+* jQuery EU Cookie Compliance Message Plugin
+* By: Tim James [http://timjames.me]
+* Version 0.1
+* Last Modified: 29/05/2012
+*
+* Copyright 2012 Tim James
+* Dual licensed under the MIT and GPL licenses.
+* http://timjames.me/eucc/GPL-LICENSE.txt
+* http://timjames.me/eucc/Impromptu/MIT-LICENSE.txt
+*/
+(function ($) {
     $.euCookieCompliance = function (options) {
         if ($.cookie('_eucc') === null) {
             var msg = '<h1>Our Cookie Policy</h1><p>By closing this message, you consent to our use of cookies in accordance with our cookie policy.</p>';
@@ -9,7 +20,7 @@
             $(modal).attr('id', 'dialog');
             var overlay = $('<div />');
             $(overlay).addClass('mask').attr('id', 'mask');
-            $(modal).append(msg).appendTo('body');           
+            $(modal).append(msg).appendTo('body');
             $(overlay).appendTo('body');
             var maskHeight = $(document).height();
             var maskWidth = $(window).width();
@@ -29,4 +40,13 @@
         var S4 = function () { return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1); };
         return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
     }
+    $.aaaaaaaghCookies = function () {
+        var x = (Math.random() * ($(document).width() - 80)).toFixed();
+        var y = (Math.random() * ($(document).height() - 80)).toFixed();
+        var i = (Math.random() * 2).toFixed();
+        var cookies = ['c-1', 'c-2', 'c-3'];
+        var cHolder = $('<div />').css({ 'position': 'absolute', 'left': x + 'px', 'top': y + 'px' }).append('<img src="img/' + cookies[i] + '.png" />');
+        $('body').append(cHolder);
+        setTimeout($.aaaaaaaghCookies, 3000);
+    };
 })(jQuery);
