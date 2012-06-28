@@ -25,7 +25,7 @@ namespace WebApp.Controls.Buttons
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            this.button1_Click(sender, e);
+            this.button1_Click(sender, e);            
             return;
         }
 

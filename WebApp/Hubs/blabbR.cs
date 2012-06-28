@@ -19,75 +19,34 @@ namespace WebApp.Hubs
 
         private static readonly Dictionary<string, ChatUser> _users = new Dictionary<string, ChatUser>(StringComparer.OrdinalIgnoreCase);
 
-        public bool Join()
+        public bool AdminLogin(string username, string password)
         {
-            // if main user is online, then return true
-            var userIdCookie = Context.Cookies["userid"];
-            if (userIdCookie == null)
+            if (username == "admin" && password == "password")
             {
-                return false;
-            }
-            
-            ChatUser user = _users.Values.FirstOrDefault(u => u.Id == userIdCookie);
-            if (user != null)
-            {
-                user.connectionId = Context.ConnectionId;
-
-                // set some client state
-                Caller.id = user.Id;
-                Caller.name = user.name;
-                Caller.hash = user.hash;
-
-                Caller.addUser(user);
+                // o noes, using probably the most widely used admin username and password combinations!      
+                if (!_users.ContainsKey("admin"))
+                {
+                    _users.Add("admin", new ChatUser() { connectionId = Context.ConnectionId, Id = Context.ConnectionId, isAdmin = true, name = "Tim" });
+                }                
                 return true;
-
             }
-                        
-            return false;                    
+            return false;
         }
 
-        public void Send(string command)
+        public bool IsOnline()
         {
-
-            if (!TryHandleCommand(command))
+            if (_users.ContainsKey("admin"))
             {
-                Caller.addMessage(command);
+                return true;
             }
-            
+            return false;
         }
 
-        private bool TryHandleCommand(string message)
-        {
-            return true;
-        }
 
-        private ChatUser AddUser(string newUserName)
-        {
-            var user = new ChatUser(newUserName, GetMD5Hash(newUserName));
-            user.connectionId = Context.ConnectionId;
-            _users[newUserName] = user;
-
-            Caller.name = user.name;
-            Caller.hash = user.hash;
-            Caller.id = user.Id;
-
-            Caller.addUser(user);
-
-            return user;
-        }
-
-        public System.Threading.Tasks.Task Disconnect()
+        public Task Disconnect()
         {
             throw new NotImplementedException();
         }
-
-        private string GetMD5Hash(string name)
-        {
-            return String.Join("", MD5.Create()
-                         .ComputeHash(Encoding.Default.GetBytes(name))
-                         .Select(b => b.ToString("x2")));
-        }
-
     }
 
     [Serializable]
@@ -98,17 +57,19 @@ namespace WebApp.Hubs
         public string Id { get; set; }
         public string name { get; set; }
         public string hash { get; set; }
+        public bool isAdmin { get; set; }
 
         public ChatUser()
         {
 
         }
 
-        public ChatUser(string name, string hash)
+        public ChatUser(string name, string hash, bool isAdmin)
         {
             this.name = name;
             this.hash = hash;
             this.Id = Guid.NewGuid().ToString("d");
+            this.isAdmin = isAdmin;
         }
 
     }

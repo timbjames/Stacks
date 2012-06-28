@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>jQuery UI Datetimepicker Demo 1</title>
+    <title>jQuery UI Date Picker Demo 1</title>
     
     <meta name="description" content="">
     
@@ -23,17 +23,7 @@
     <link rel="stylesheet" href="/css/style.css" />    
     <!-- link to jQuery UI styling provided by aspnet CDN -->
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
-   
-    <!-- additional styling for this particular plugin -->
-    <style>
-        /* css for timepicker */        
-        .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
-        .ui-timepicker-div dl{ text-align: left; }
-        .ui-timepicker-div dl dt{ height: 25px; }
-        .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
-        .ui-timepicker-div td { font-size: 90%; }
-    </style>
-
+  
 </head>
 <body>
    
@@ -44,7 +34,7 @@
 
     <div role="main">
         <p>
-            Working Demo using jQuery + jQuery UI + jQuery UI DateTimePicker plugin developed by Trent Richardson
+            Working Demo using jQuery + jQuery UI
         </p>
 
         <form>
@@ -52,21 +42,16 @@
                 <legend>Date-Time Selectors</legend>
 
                 <p>
-                    Start Date + Time:
+                    Making use of the onClose event:
                     <br />
-                    <input type="text" id="sDate" name="sDate" class="date-time" />
+                    <input type="text" id="datePicker" name="datePicker" />
                 </p>
-
                 <p>
-                    End Date + Time:
+                    Day: <span id="day"></span>
                     <br />
-                    <input type="text" id="eDate" name="eDate" class="date-time" />
-                </p>
-
-                <p>
-                    Formatted Date + Time (dd-mm-yy):
+                    Month: <span id="month"></span>
                     <br />
-                    <input type="text" id="ukFormat" name="ukFormat" />
+                    Year: <span id="year"></span>
                 </p>
 
             </fieldset>
@@ -80,7 +65,7 @@
     <!-- JavaScript at the bottom for fast page loading -->
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script> window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <script>        window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
     <!-- include jQuery UI for core functionality of DatePicker -->
     <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
@@ -88,17 +73,21 @@
     <!-- 
         ************************************************************************************************************************
         You could also include a jQuery UI fallback here. See http://timjames.me/jquery-and-jquery-ui-fallbacks for more info 
+        Check out the jQuery UI DateTimePicker Plugin here http://timjames.me/jquery-ui-datetimepicker-plugin
         ************************************************************************************************************************
      -->
 
-    <!-- include the jQuery UI datetimepicker plugin -->
-    <script src="/js/libs/jquery-ui-datetimepicker.js"></script>
 
     <!-- script to perform the magic!-->
     <script>
         $(function () {
-            $('.date-time').datetimepicker(); // selector picks any element with class="date-time"
-            $('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"            
+            $('#datePicker').datepicker({
+                onClose: function (dateText) {
+                    $('#day').html(dateText.split('/')[0]);
+                    $('#month').html(dateText.split('/')[1]);
+                    $('#year').html(dateText.split('/')[2]);
+                }
+            });
         });
     </script>
    

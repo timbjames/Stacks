@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp.Controls.DataList {
+namespace WebApp.cookie_compliance {
     
     
-    public partial class basic_datalist {
+    public partial class custom {
         
         /// <summary>
         /// form1 control.
@@ -22,21 +22,21 @@ namespace WebApp.Controls.DataList {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ltDateTime control.
+        /// tbCustom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltDateTime;
+        protected global::System.Web.UI.WebControls.TextBox tbCustom;
         
         /// <summary>
-        /// dl1 control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl1;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

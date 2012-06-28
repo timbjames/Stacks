@@ -11,9 +11,20 @@ namespace WebApp.Controls.DataList
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.dl1.DataSource = Enumerable.Range(0, 10);
-            this.dl1.ItemCommand += new DataListCommandEventHandler(dl1_ItemCommand);
-            this.dl1.DataBind();
+
+            this.ltDateTime.Text = DateTime.Now.ToString("dddd MMM hh:ss");
+
+            if (!Page.IsPostBack)
+            {
+                this.dl1.DataSource = Enumerable.Range(0, 10);
+                this.dl1.ItemCommand += new DataListCommandEventHandler(dl1_ItemCommand);
+                this.dl1.DataBind();
+
+                foreach (DataListItem li in dl1.Items)
+                {
+                    Response.Write(((Literal)li.FindControl("ltOne")).Text);                    
+                }
+            }            
         }
 
         void dl1_ItemCommand(object source, DataListCommandEventArgs e)
@@ -22,7 +33,7 @@ namespace WebApp.Controls.DataList
             {
                 if (e.CommandName == "Click")
                 {
-
+                    ((Literal)e.Item.FindControl("ltOne")).Text = DateTime.Now.ToString("dddd MMM hh:ss");                    
                 }
             }
         }
