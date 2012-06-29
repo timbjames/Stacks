@@ -1019,7 +1019,7 @@
     //#######################################################################################
     // override options setter to add time to maxDate(Time) and minDate(Time)
     //#######################################################################################
-    $.datepicker._base_optionDatepicker = $.datepicker._optionDatepicker;
+    $.datepicker._base_optionDatepicker = $.datepicker._optionDatepicker;    
     $.datepicker._optionDatepicker = function (target, name, value) {
         this._base_optionDatepicker(target, name, value);
         var inst = this._getInst(target),

@@ -69,6 +69,12 @@
                     <input type="text" id="ukFormat" name="ukFormat" />
                 </p>
 
+                <p>
+                    onSelect and onClose event:
+                    <br />
+                    <input type="text" id="dateTimePicker" name="dateTimePicker" /> <span id="day">day</span> <span id="month">month</span> <span id="year">year</span> <span id="time">time</span>                  
+                </p>
+
             </fieldset>
         </form>
 
@@ -92,13 +98,46 @@
      -->
 
     <!-- include the jQuery UI datetimepicker plugin -->
-    <script src="/js/libs/jquery-ui-datetimepicker.js"></script>
+    <script src="/js/libs/jquery-ui-datetimepicker.js"></script>    
 
     <!-- script to perform the magic!-->
     <script>
         $(function () {
+
             $('.date-time').datetimepicker(); // selector picks any element with class="date-time"
-            $('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"            
+
+            $('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"                       
+
+            $('#dateTimePicker').datetimepicker({ dateFormat: 'mm-dd-yy',
+                onSelect: function (dateText) {
+
+                    /* get the selected date */
+                    var selectedDate = $('#dateTimePicker').datetimepicker('getDate');
+
+                    /* create an array of day and month names based on the datepicker defaults */
+                    /* to set the _defaults for day and month names, take a look here http://jqueryui.com/demos/datepicker/#localization  */
+                    var dayNames = $.datepicker._defaults.dayNames;
+                    var monthNames = $.datepicker._defaults.monthNames;
+
+                    /* assign are vars */
+                    var date = selectedDate.getDate();
+                    var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
+                    var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
+                    var year = selectedDate.getFullYear();
+                    var time = selectedDate.getHours() + ':' + selectedDate.getMinutes();
+
+                    /* update the ui */ 
+                    $('#day').html('day: ' + date + ' ' + day);
+                    $('#month').html('month: ' + month);
+                    $('#year').html('year: ' + year);
+                    $('#time').html('time: ' + time);
+
+                },
+                onClose: function (dateText) {
+                    /* do something */
+                }
+            });
+
         });
     </script>
    

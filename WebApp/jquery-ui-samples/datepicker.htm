@@ -42,7 +42,7 @@
                 <legend>Date-Time Selectors</legend>
 
                 <p>
-                    Making use of the onClose event:
+                    Making use of the onSelect and onClose event:
                     <br />
                     <input type="text" id="datePicker" name="datePicker" />
                 </p>
@@ -81,11 +81,36 @@
     <!-- script to perform the magic!-->
     <script>
         $(function () {
+            
+            /* setting the dayNames and monthNames is optional. This example just shows you how you can modify them or use the defaults */
             $('#datePicker').datepicker({
+                dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                onSelect: function (dateText) {
+
+                    /* get the selected date */
+                    var selectedDate = $('#datePicker').datepicker('getDate');
+
+                    /* get the array of day names and month names from the date picker */
+                    var dayNames = $('#datePicker').datepicker('option', 'dayNames');
+                    /* default dayNames can be accessed using $.datepicker._defaults.dayNames; */
+                    var monthNames = $('#datePicker').datepicker('option', 'monthNames');
+                    /* default monthNames can be accessed using $.datepicker._defaults.monthNames; */
+
+                    /* assign are vars */
+                    var date = selectedDate.getDate();
+                    var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
+                    var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
+                    var year = selectedDate.getFullYear();
+
+                    /* update the ui */
+                    $('#day').html(day + ' ' + date);
+                    $('#month').html(month);
+                    $('#year').html(year);
+
+                },
                 onClose: function (dateText) {
-                    $('#day').html(dateText.split('/')[0]);
-                    $('#month').html(dateText.split('/')[1]);
-                    $('#year').html(dateText.split('/')[2]);
+                    /* do something */
                 }
             });
         });
