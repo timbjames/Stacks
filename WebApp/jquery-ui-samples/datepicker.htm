@@ -80,40 +80,40 @@
 
     <!-- script to perform the magic!-->
     <script>
-        $(function () {
+    $(function () {
             
-            /* setting the dayNames and monthNames is optional. This example just shows you how you can modify them or use the defaults */
-            $('#datePicker').datepicker({
-                dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                onSelect: function (dateText) {
+        /* setting the dayNames and monthNames is optional. This example just shows you how you can modify them or use the defaults */
+        $('#datePicker').datepicker({
+            dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            onSelect: function (dateText) {
 
-                    /* get the selected date */
-                    var selectedDate = $('#datePicker').datepicker('getDate');
+                /* get the selected date */
+                var selectedDate = $('#datePicker').datepicker('getDate');
 
-                    /* get the array of day names and month names from the date picker */
-                    var dayNames = $('#datePicker').datepicker('option', 'dayNames');
-                    /* default dayNames can be accessed using $.datepicker._defaults.dayNames; */
-                    var monthNames = $('#datePicker').datepicker('option', 'monthNames');
-                    /* default monthNames can be accessed using $.datepicker._defaults.monthNames; */
+                /* get the array of day names and month names from the date picker */
+                var dayNames = $('#datePicker').datepicker('option', 'dayNames');
+                /* default dayNames can be accessed using $.datepicker._defaults.dayNames; */
+                var monthNames = $('#datePicker').datepicker('option', 'monthNames');
+                /* default monthNames can be accessed using $.datepicker._defaults.monthNames; */
 
-                    /* assign are vars */
-                    var date = selectedDate.getDate();
-                    var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
-                    var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
-                    var year = selectedDate.getFullYear();
+                /* assign are vars */
+                var date = selectedDate.getDate();
+                var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
+                var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
+                var year = selectedDate.getFullYear();
 
-                    /* update the ui */
-                    $('#day').html(day + ' ' + date);
-                    $('#month').html(month);
-                    $('#year').html(year);
+                /* update the ui */
+                $('#day').html(day + ' ' + date);
+                $('#month').html(month);
+                $('#year').html(year);
 
-                },
-                onClose: function (dateText) {
-                    /* do something */
-                }
-            });
+            },
+            onClose: function (dateText) {
+                /* do something */
+            }
         });
+    });
     </script>
    
 </body>

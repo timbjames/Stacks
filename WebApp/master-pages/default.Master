@@ -19,6 +19,11 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
+
+        <ul>
+            <li id="liOne" runat="server"><a href="#">One</a></li>
+        </ul>
+
     </div>
     </form>
 </body>

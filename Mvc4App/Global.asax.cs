@@ -6,6 +6,10 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Raven.Client;
+using Raven.Client.Document;
+using Raven.Client.Indexes;
+using System.Reflection;
 
 namespace Mvc4App
 {
@@ -14,6 +18,9 @@ namespace Mvc4App
 
     public class MvcApplication : System.Web.HttpApplication
     {
+
+        public static IDocumentStore documentStore;
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -44,6 +51,15 @@ namespace Mvc4App
             RegisterRoutes(RouteTable.Routes);
 
             BundleTable.Bundles.RegisterTemplateBundles();
+
+            /* lets connect to our RavenDB for access in our website */
+            documentStore = new DocumentStore { ConnectionStringName = "RavenDB" }.Initialize();
+            IndexCreation.CreateIndexes(Assembly.GetCallingAssembly(), documentStore);
+
+            /* UPDATE HiLo */
+            //var generator = new MultiTypeHiLoKeyGenerator(Global.documentStore, 5);
+            //Global.documentStore.Conventions.DocumentKeyGenerator = entity => generator.GenerateDocumentKey(Global.documentStore.Conventions, entity);
+
         }
     }
 }

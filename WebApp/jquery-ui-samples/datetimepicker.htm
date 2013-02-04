@@ -106,7 +106,8 @@
 
             $('.date-time').datetimepicker(); // selector picks any element with class="date-time"
 
-            $('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"                       
+            //$('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"                       
+            $('#ukFormat').datetimepicker({ dateFormat: 'yy-mm-dd' });
 
             $('#dateTimePicker').datetimepicker({ dateFormat: 'mm-dd-yy',
                 onSelect: function (dateText) {

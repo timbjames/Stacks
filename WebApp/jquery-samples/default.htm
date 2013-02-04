@@ -47,6 +47,10 @@
         <p>
             O Hai!
         </p>
+        <pre class="html">This
+            Is 
+            The
+            Code</pre>
     </div>
 
     <footer>
@@ -60,6 +64,15 @@
     <!-- scripts concatenated and minified via build script -->
     <script src="/js/plugins.js"></script>
     <script src="/js/script.js"></script>
+
+    <script>
+        function lineBreakCount(str) {
+            try { return (str.match(/[^\n]*\n[^\n]*/gi).length); } catch (e) { return 0; }
+        }
+        $(function () {
+            var code = $('pre.html').html();
+        });
+    </script>
 
     <!-- end scripts -->
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

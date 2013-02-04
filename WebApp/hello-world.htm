@@ -49,6 +49,15 @@
         <p>
             O Hai!
         </p>
+
+
+        <form action="test.htm">
+
+            <button type="button">Button</button>
+            <input type="submit" value="Submit" />
+
+        </form>
+
     </div>
 
     <footer>
@@ -66,7 +75,16 @@
     <script src="/js/script.js"></script>
     <script src="/js/mylibs/jquery-notifiR-1.0.js"></script>
     <script>        
-        $.notifiR({msg: 'test', type: 'instruct', title: 'notifiR'});
+        $.notifiR({ msg: 'test', type: 'instruct', title: 'notifiR' });
+
+        var s = "{\"test\":\"one\"}";
+        var j = $.parseJSON(s);
+
+        $.each(j, function (key, val) {
+            console.log(key);
+            console.log(val);
+        });
+
     </script>
 
     <!-- end scripts -->

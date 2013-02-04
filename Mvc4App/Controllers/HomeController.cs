@@ -16,6 +16,12 @@ namespace Mvc4App.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Index(int id)
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your quintessential app description page.";

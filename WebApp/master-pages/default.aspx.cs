@@ -20,6 +20,13 @@ namespace WebApp.master_pages
 
             ddlOne.SelectedIndexChanged += new EventHandler(ddlOne_SelectedIndexChanged);
 
+            System.Web.UI.HtmlControls.HtmlGenericControl li = (System.Web.UI.HtmlControls.HtmlGenericControl) this.Page.Master.FindControl("liOne");
+            li.Style.Add("color", "red");
+            li.Attributes.Add("class", "one");
+
+            Control li2 = this.Page.Master.FindControl("liOne");
+                       
+
         }
 
         void ddlOne_SelectedIndexChanged(object sender, EventArgs e)
