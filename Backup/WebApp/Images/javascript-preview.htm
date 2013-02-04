@@ -32,7 +32,7 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
-   
+
 </head>
 <body>
     
@@ -42,21 +42,17 @@
 
     <header>
         <h1>
-            Hello World!</h1>
+            Javascript Preview</h1>
     </header>
 
     <div role="main">
-        <p>
-            O Hai! Test
-        </p>
-
-
-        <form action="test.htm">
-
-            <button type="button">Button</button>
-            <input type="submit" value="Submit" />
-
-        </form>
+        
+        <article>
+            <p id="status">File API &amp; FileReader API not supported</p>
+            <p><input type=file></p>
+            <p>Select an image from your machine to read the contents of the file without using a server</p>
+            <div id="holder"></div>
+        </article>
 
     </div>
 
@@ -73,19 +69,40 @@
     <!-- scripts concatenated and minified via build script -->
     <script src="/js/plugins.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/mylibs/jquery-notifiR-1.0.js"></script>
-    <script>        
-        $.notifiR({ msg: 'test', type: 'instruct', title: 'notifiR' });
+    
+    <script>
+        var upload = document.getElementsByTagName('input')[0],
+        holder = document.getElementById('holder'),
+        state = document.getElementById('status');
 
-        var s = "{\"test\":\"one\"}";
-        var j = $.parseJSON(s);
+            if (typeof window.FileReader === 'undefined') {
+                state.className = 'fail';
+            } else {
+                state.className = 'success';
+                state.innerHTML = 'File API & FileReader available';
+            }
 
-        $.each(j, function (key, val) {
-            console.log(key);
-            console.log(val);
-        });
+            upload.onchange = function (e) {
+                e.preventDefault();
 
+                var file = upload.files[0],
+          reader = new FileReader();
+                reader.onload = function (event) {
+                    var img = new Image();
+                    img.src = event.target.result;
+                    // note: no onload required since we've got the dataurl...I think! :)
+                    if (img.width > 560) { // holder width
+                        img.width = 560;
+                    }
+                    holder.innerHTML = '';
+                    holder.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+
+                return false;
+            };
     </script>
+
 
     <!-- end scripts -->
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

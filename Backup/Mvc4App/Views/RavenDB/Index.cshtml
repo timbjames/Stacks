@@ -1,0 +1,12 @@
+﻿@model Mvc4App.Model.Product
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RavenDBLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if ( Model != null){
+    @Model.Name    
+}

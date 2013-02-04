@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2530b47f2e7b4b888bd63c7d7a77f80c" Name="Diagram1">
+        <EntityTypeShape EntityType="MVISModel.MVIS_MasterSite" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVISModel.MVIS_Section" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVISModel.MVIS_SectionType" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="MVISModel.FK_MVIS_Section_MVIS_SectionType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MVISModel.MVIS_Seller" Width="1.5" PointX="5.4260898853773671" PointY="5.9696464566372551" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>jQuery UI Datetimepicker Demo 1</title>
+    
+    <meta name="description" content="">
+    
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- link to base styling -->
+    <link rel="stylesheet" href="/css/style.css" />    
+    <!-- link to jQuery UI styling provided by aspnet CDN -->
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
+   
+    <!-- additional styling for this particular plugin -->
+    <style>
+        /* css for timepicker */        
+        .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+        .ui-timepicker-div dl{ text-align: left; }
+        .ui-timepicker-div dl dt{ height: 25px; }
+        .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+        .ui-timepicker-div td { font-size: 90%; }
+    </style>
+
+</head>
+<body>
+   
+    <header>
+        <h1>
+            jQuery UI DateTimePicker Demo 1</h1>
+    </header>
+
+    <div role="main">
+        <p>
+            Working Demo using jQuery + jQuery UI + jQuery UI DateTimePicker plugin developed by Trent Richardson
+        </p>
+
+        <form>
+            <fieldset>
+                <legend>Date-Time Selectors</legend>
+
+                <p>
+                    Start Date + Time:
+                    <br />
+                    <input type="text" id="sDate" name="sDate" class="date-time" />
+                </p>
+
+                <p>
+                    End Date + Time:
+                    <br />
+                    <input type="text" id="eDate" name="eDate" class="date-time" />
+                </p>
+
+                <p>
+                    Formatted Date + Time (dd-mm-yy):
+                    <br />
+                    <input type="text" id="ukFormat" name="ukFormat" />
+                </p>
+
+                <p>
+                    onSelect and onClose event:
+                    <br />
+                    <input type="text" id="dateTimePicker" name="dateTimePicker" /> <span id="day">day</span> <span id="month">month</span> <span id="year">year</span> <span id="time">time</span>                  
+                </p>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <footer>
+    </footer>
+
+    <!-- JavaScript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script> window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+    <!-- include jQuery UI for core functionality of DatePicker -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
+
+    <!-- 
+        ************************************************************************************************************************
+        You could also include a jQuery UI fallback here. See http://timjames.me/jquery-and-jquery-ui-fallbacks for more info 
+        ************************************************************************************************************************
+     -->
+
+    <!-- include the jQuery UI datetimepicker plugin -->
+    <script src="/js/libs/jquery-ui-datetimepicker.js"></script>    
+
+    <!-- script to perform the magic!-->
+    <script>
+        $(function () {
+
+            $('.date-time').datetimepicker(); // selector picks any element with class="date-time"
+
+            $('#ukFormat').datetimepicker({ dateFormat: 'dd-mm-yy' }); // selector picks element with id="ukFormat"                       
+
+            $('#dateTimePicker').datetimepicker({ dateFormat: 'mm-dd-yy',
+                onSelect: function (dateText) {
+
+                    /* get the selected date */
+                    var selectedDate = $('#dateTimePicker').datetimepicker('getDate');
+
+                    /* create an array of day and month names based on the datepicker defaults */
+                    /* to set the _defaults for day and month names, take a look here http://jqueryui.com/demos/datepicker/#localization  */
+                    var dayNames = $.datepicker._defaults.dayNames;
+                    var monthNames = $.datepicker._defaults.monthNames;
+
+                    /* assign are vars */
+                    var date = selectedDate.getDate();
+                    var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
+                    var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
+                    var year = selectedDate.getFullYear();
+                    var time = selectedDate.getHours() + ':' + selectedDate.getMinutes();
+
+                    /* update the ui */ 
+                    $('#day').html('day: ' + date + ' ' + day);
+                    $('#month').html('month: ' + month);
+                    $('#year').html('year: ' + year);
+                    $('#time').html('time: ' + time);
+
+                },
+                onClose: function (dateText) {
+                    /* do something */
+                }
+            });
+
+        });
+    </script>
+   
+</body>
+</html>

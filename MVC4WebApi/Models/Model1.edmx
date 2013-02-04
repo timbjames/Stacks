@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MVISModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MVISModelStoreContainer">
+          <EntitySet Name="MVIS_MasterSite" EntityType="MVISModel.Store.MVIS_MasterSite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MVIS_Section" EntityType="MVISModel.Store.MVIS_Section" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MVIS_SectionType" EntityType="MVISModel.Store.MVIS_SectionType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MVIS_Seller" EntityType="MVISModel.Store.MVIS_Seller" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_MVIS_Section_MVIS_SectionType" Association="MVISModel.Store.FK_MVIS_Section_MVIS_SectionType">
+            <End Role="MVIS_SectionType" EntitySet="MVIS_SectionType" />
+            <End Role="MVIS_Section" EntitySet="MVIS_Section" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="MVIS_MasterSite">
+          <Key>
+            <PropertyRef Name="MasterSiteID" />
+          </Key>
+          <Property Name="MasterSiteID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MVIS_Section">
+          <Key>
+            <PropertyRef Name="SectionID" />
+          </Key>
+          <Property Name="SectionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SectionTypeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Points" Type="int" />
+        </EntityType>
+        <EntityType Name="MVIS_SectionType">
+          <Key>
+            <PropertyRef Name="SectionTypeID" />
+          </Key>
+          <Property Name="SectionTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MVIS_Seller">
+          <Key>
+            <PropertyRef Name="SellerId" />
+          </Key>
+          <Property Name="SellerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="int" Nullable="false" />
+          <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Ad1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ad2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ad3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ad4" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ad5" Type="nvarchar" MaxLength="250" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_MVIS_Section_MVIS_SectionType">
+          <End Role="MVIS_SectionType" Type="MVISModel.Store.MVIS_SectionType" Multiplicity="1" />
+          <End Role="MVIS_Section" Type="MVISModel.Store.MVIS_Section" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MVIS_SectionType">
+              <PropertyRef Name="SectionTypeID" />
+            </Principal>
+            <Dependent Role="MVIS_Section">
+              <PropertyRef Name="SectionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MVISModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MVISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MVIS_MasterSite" EntityType="MVISModel.MVIS_MasterSite" />
+          <EntitySet Name="MVIS_Section" EntityType="MVISModel.MVIS_Section" />
+          <EntitySet Name="MVIS_SectionType" EntityType="MVISModel.MVIS_SectionType" />
+          <AssociationSet Name="FK_MVIS_Section_MVIS_SectionType" Association="MVISModel.FK_MVIS_Section_MVIS_SectionType">
+            <End Role="MVIS_SectionType" EntitySet="MVIS_SectionType" />
+            <End Role="MVIS_Section" EntitySet="MVIS_Section" />
+          </AssociationSet>
+          <EntitySet Name="MVIS_Seller" EntityType="MVISModel.MVIS_Seller" />
+        </EntityContainer>
+        <EntityType Name="MVIS_MasterSite">
+          <Key>
+            <PropertyRef Name="MasterSiteID" />
+          </Key>
+          <Property Name="MasterSiteID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MVIS_Section">
+          <Key>
+            <PropertyRef Name="SectionID" />
+          </Key>
+          <Property Name="SectionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SectionTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Points" Type="Int32" />
+          <NavigationProperty Name="MVIS_SectionType" Relationship="MVISModel.FK_MVIS_Section_MVIS_SectionType" FromRole="MVIS_Section" ToRole="MVIS_SectionType" />
+        </EntityType>
+        <EntityType Name="MVIS_SectionType">
+          <Key>
+            <PropertyRef Name="SectionTypeID" />
+          </Key>
+          <Property Name="SectionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MVIS_Section" Relationship="MVISModel.FK_MVIS_Section_MVIS_SectionType" FromRole="MVIS_SectionType" ToRole="MVIS_Section" />
+        </EntityType>
+        <Association Name="FK_MVIS_Section_MVIS_SectionType">
+          <End Role="MVIS_SectionType" Type="MVISModel.MVIS_SectionType" Multiplicity="1" />
+          <End Role="MVIS_Section" Type="MVISModel.MVIS_Section" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MVIS_SectionType">
+              <PropertyRef Name="SectionTypeID" />
+            </Principal>
+            <Dependent Role="MVIS_Section">
+              <PropertyRef Name="SectionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MVIS_Seller">
+          <Key>
+            <PropertyRef Name="SellerId" />
+          </Key>
+          <Property Type="Int32" Name="SellerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VehicleId" Nullable="false" />
+          <Property Type="String" Name="AccountCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ad1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ad2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ad3" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ad4" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ad5" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Postcode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MVISModelStoreContainer" CdmEntityContainer="MVISEntities">
+          <EntitySetMapping Name="MVIS_MasterSite">
+            <EntityTypeMapping TypeName="MVISModel.MVIS_MasterSite">
+              <MappingFragment StoreEntitySet="MVIS_MasterSite">
+                <ScalarProperty Name="MasterSiteID" ColumnName="MasterSiteID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MVIS_Section">
+            <EntityTypeMapping TypeName="MVISModel.MVIS_Section">
+              <MappingFragment StoreEntitySet="MVIS_Section">
+                <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+                <ScalarProperty Name="SectionTypeID" ColumnName="SectionTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MVIS_SectionType">
+            <EntityTypeMapping TypeName="MVISModel.MVIS_SectionType">
+              <MappingFragment StoreEntitySet="MVIS_SectionType">
+                <ScalarProperty Name="SectionTypeID" ColumnName="SectionTypeID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MVIS_Seller">
+            <EntityTypeMapping TypeName="MVISModel.MVIS_Seller">
+              <MappingFragment StoreEntitySet="MVIS_Seller">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Ad5" ColumnName="Ad5" />
+                <ScalarProperty Name="Ad4" ColumnName="Ad4" />
+                <ScalarProperty Name="Ad3" ColumnName="Ad3" />
+                <ScalarProperty Name="Ad2" ColumnName="Ad2" />
+                <ScalarProperty Name="Ad1" ColumnName="Ad1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="SellerId" ColumnName="SellerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

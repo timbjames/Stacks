@@ -23,16 +23,14 @@
     <meta name="viewport" content="width=device-width">
     
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/jquery-notifiR-1.0.css" />
-    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/style.css">
     
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
     <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
-   
+
 </head>
 <body>
     
@@ -47,17 +45,12 @@
 
     <div role="main">
         <p>
-            O Hai! Test
+            O Hai!
         </p>
-
-
-        <form action="test.htm">
-
-            <button type="button">Button</button>
-            <input type="submit" value="Submit" />
-
-        </form>
-
+        <pre class="html">This
+            Is 
+            The
+            Code</pre>
     </div>
 
     <footer>
@@ -68,23 +61,17 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>        window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
-
     <!-- scripts concatenated and minified via build script -->
     <script src="/js/plugins.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/mylibs/jquery-notifiR-1.0.js"></script>
-    <script>        
-        $.notifiR({ msg: 'test', type: 'instruct', title: 'notifiR' });
 
-        var s = "{\"test\":\"one\"}";
-        var j = $.parseJSON(s);
-
-        $.each(j, function (key, val) {
-            console.log(key);
-            console.log(val);
+    <script>
+        function lineBreakCount(str) {
+            try { return (str.match(/[^\n]*\n[^\n]*/gi).length); } catch (e) { return 0; }
+        }
+        $(function () {
+            var code = $('pre.html').html();
         });
-
     </script>
 
     <!-- end scripts -->

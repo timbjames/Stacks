@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C374F70E-3A59-404E-A8AE-E136507A0391}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ImageBrowser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB.Client.1.0.960\lib\net40\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB.Client.1.0.960\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.4.0.0\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.AspNet">
+      <HintPath>..\packages\SignalR.Hosting.AspNet.0.4.0.0\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BlabbR\default.htm" />
+    <Content Include="Controls\Buttons\button-clicks.aspx" />
+    <Content Include="Controls\CheckboxList\default.aspx" />
+    <Content Include="Controls\DataList\basic-datalist.aspx" />
+    <Content Include="Controls\GridView\command-argument.aspx" />
+    <Content Include="Controls\GridView\default.aspx" />
+    <Content Include="Controls\GridView\listOf-images.aspx" />
+    <Content Include="Controls\GridView\row-databound.aspx" />
+    <Content Include="Controls\ListView\basic-example.aspx" />
+    <Content Include="Controls\Repeater\default.aspx" />
+    <Content Include="Controls\Repeater\item-databound.aspx" />
+    <Content Include="Controls\Repeater\listOf-images.aspx" />
+    <Content Include="Controls\TreeView\Default.aspx" />
+    <Content Include="Controls\TreeView\Tree.xml" />
+    <Content Include="Controls\With JS\default.aspx" />
+    <Content Include="cookie-compliance\custom.aspx" />
+    <Content Include="cookie-compliance\img\c-1.png" />
+    <Content Include="cookie-compliance\img\c-2.png" />
+    <Content Include="cookie-compliance\img\c-3.png" />
+    <Content Include="cookie-compliance\img\cross.png" />
+    <Content Include="cookie-compliance\css\jquery.cc-acceptance.0.1.css" />
+    <Content Include="cookie-compliance\default.htm" />
+    <Content Include="cookie-compliance\js\jquery-1.7.1.min.js" />
+    <Content Include="cookie-compliance\js\jquery.cc-acceptance.0.1.js" />
+    <Content Include="cookie-compliance\js\jquery.cookie.js" />
+    <Content Include="cookie-compliance\template\custom.txt" />
+    <Content Include="css\jquery-blabbR-1.0.css" />
+    <Content Include="css\jquery-notifiR-1.0.css" />
+    <Content Include="css\jquery.snippet.css" />
+    <Content Include="css\jquery.snippet.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="DeleteMe.aspx" />
+    <Content Include="fonts\default.htm" />
+    <Content Include="fonts\thesans-9-black-webfont.svg" />
+    <Content Include="forever-frame\default.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="hello-world.aspx" />
+    <Content Include="hello-world.htm" />
+    <Content Include="Images\browse-and-delete.aspx" />
+    <Content Include="Images\browser.ascx" />
+    <Content Include="Images\javascript-preview.htm" />
+    <Content Include="Images\media\Desert.jpg" />
+    <Content Include="Images\media\Jellyfish.jpg" />
+    <Content Include="Images\media\Lighthouse.jpg" />
+    <Content Include="Images\media\Tulips.jpg" />
+    <Content Include="jquery-samples\default.htm" />
+    <Content Include="jquery-samples\jquery.snippet\demo.htm" />
+    <Content Include="jquery-samples\load\data.aspx" />
+    <Content Include="jquery-samples\load\default.htm" />
+    <Content Include="jquery-ui-samples\datepicker.htm" />
+    <Content Include="jquery-ui-samples\datetimepicker.htm" />
+    <Content Include="js\libs\jquery-1.7.1.js" />
+    <Content Include="js\libs\jquery-1.7.1.min.js" />
+    <Content Include="js\libs\jquery.cookie.js" />
+    <Content Include="js\libs\jquery-ui-datetimepicker.js" />
+    <Content Include="js\libs\jquery.snippet.js" />
+    <Content Include="js\libs\jquery.snippet.min.js" />
+    <Content Include="js\libs\modernizr-2.5.3.min.js" />
+    <Content Include="js\libs\ZeroClipboard.swf" />
+    <Content Include="js\mylibs\jquery-blabbR-1.0.js" />
+    <Content Include="js\mylibs\jquery-notifiR-1.0.js" />
+    <Content Include="js\mylibs\jquery.getDateFromFormat.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\script.js" />
+    <Content Include="master-pages\default.aspx" />
+    <Content Include="RavenDB\default.aspx" />
+    <Content Include="responsive-layout\bg\bg-10.gif" />
+    <Content Include="responsive-layout\bg\bg-2.gif" />
+    <Content Include="responsive-layout\bg\bg-3.gif" />
+    <Content Include="responsive-layout\bg\bg-4.gif" />
+    <Content Include="responsive-layout\bg\bg-5.gif" />
+    <Content Include="responsive-layout\bg\bg-6.gif" />
+    <Content Include="responsive-layout\bg\bg-7.gif" />
+    <Content Include="responsive-layout\bg\bg-8.gif" />
+    <Content Include="responsive-layout\bg\bg-9.gif" />
+    <Content Include="responsive-layout\bg\bg-1.gif" />
+    <Content Include="responsive-layout\css\style.css" />
+    <Content Include="responsive-layout\default.htm" />
+    <Content Include="responsive-layout\js\helper.js" />
+    <Content Include="responsive-layout\js\libs\jquery-1.7.1.min.js" />
+    <Content Include="responsive-layout\js\libs\modernizr-2.0.6.min.js" />
+    <Content Include="responsive-layout\js\plugins.js" />
+    <Content Include="responsive-layout\js\script.js" />
+    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="js\libs\jquery.signalR.js" />
+    <Content Include="js\libs\jquery.signalR.min.js" />
+    <Content Include="Scripts\jquery.signalR.js" />
+    <Content Include="Scripts\jquery.signalR.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="_dependencies\ImageBrowser.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Buttons\button-clicks.aspx.cs">
+      <DependentUpon>button-clicks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Buttons\button-clicks.aspx.designer.cs">
+      <DependentUpon>button-clicks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckboxList\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckboxList\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataList\basic-datalist.aspx.cs">
+      <DependentUpon>basic-datalist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DataList\basic-datalist.aspx.designer.cs">
+      <DependentUpon>basic-datalist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridView\command-argument.aspx.cs">
+      <DependentUpon>command-argument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\command-argument.aspx.designer.cs">
+      <DependentUpon>command-argument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridView\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridView\listOf-images.aspx.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\listOf-images.aspx.designer.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridView\row-databound.aspx.cs">
+      <DependentUpon>row-databound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView\row-databound.aspx.designer.cs">
+      <DependentUpon>row-databound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListView\basic-example.aspx.cs">
+      <DependentUpon>basic-example.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ListView\basic-example.aspx.designer.cs">
+      <DependentUpon>basic-example.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Repeater\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Repeater\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Repeater\item-databound.aspx.cs">
+      <DependentUpon>item-databound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Repeater\item-databound.aspx.designer.cs">
+      <DependentUpon>item-databound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Repeater\listOf-images.aspx.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Repeater\listOf-images.aspx.designer.cs">
+      <DependentUpon>listOf-images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeView\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeView\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\With JS\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\With JS\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cookie-compliance\custom.aspx.cs">
+      <DependentUpon>custom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cookie-compliance\custom.aspx.designer.cs">
+      <DependentUpon>custom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteMe.aspx.cs">
+      <DependentUpon>DeleteMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteMe.aspx.designer.cs">
+      <DependentUpon>DeleteMe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="hello-world.aspx.cs">
+      <DependentUpon>hello-world.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hello-world.aspx.designer.cs">
+      <DependentUpon>hello-world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\blabbR.cs" />
+    <Compile Include="Images\browse-and-delete.aspx.cs">
+      <DependentUpon>browse-and-delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Images\browse-and-delete.aspx.designer.cs">
+      <DependentUpon>browse-and-delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jquery-samples\load\data.aspx.cs">
+      <DependentUpon>data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jquery-samples\load\data.aspx.designer.cs">
+      <DependentUpon>data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master-pages\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master-pages\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master-pages\default.Master.cs">
+      <DependentUpon>default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master-pages\default.Master.designer.cs">
+      <DependentUpon>default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RavenDB\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RavenDB\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RavenDB\Model\Blog.cs" />
+    <Compile Include="RavenDB\Model\Shop.cs" />
+    <Compile Include="RavenDB\RavenDB.Master.cs">
+      <DependentUpon>RavenDB.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RavenDB\RavenDB.Master.designer.cs">
+      <DependentUpon>RavenDB.Master</DependentUpon>
+    </Compile>
+    <Compile Include="skin\global.Master.cs">
+      <DependentUpon>global.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="skin\global.Master.designer.cs">
+      <DependentUpon>global.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\DataGrid\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="skin\global.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\thesans-9-black-webfont.eot" />
+    <None Include="fonts\thesans-9-black-webfont.ttf" />
+    <None Include="fonts\thesans-9-black-webfont.woff" />
+    <Content Include="master-pages\default.Master" />
+    <Content Include="RavenDB\RavenDB.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56876</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

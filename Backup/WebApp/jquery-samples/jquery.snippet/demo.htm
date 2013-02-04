@@ -22,15 +22,9 @@
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width">
     
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/jquery-notifiR-1.0.css" />
-    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/themes/pepper-grinder/jquery-ui.css" />
-    
-    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-    <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+    <link rel="stylesheet" href="/css/jquery.snippet.css" />
+      
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
    
 </head>
@@ -42,21 +36,22 @@
 
     <header>
         <h1>
-            Hello World!</h1>
+            jQuery Snippet Demo</h1>
     </header>
 
     <div role="main">
         <p>
-            O Hai! Test
+            Example Usage of jQuery Snippet from <a href="http://www.steamdev.com/snippet/" target="_blank">http://www.steamdev.com/snippet/</a>
         </p>
 
+        <pre class="csharp">
+            public string HelloWorld()
+            {
+                return "Hello World";
+            }
+        </pre>
 
-        <form action="test.htm">
-
-            <button type="button">Button</button>
-            <input type="submit" value="Submit" />
-
-        </form>
+        <pre class="single">HelloWorld();</pre>
 
     </div>
 
@@ -70,34 +65,14 @@
 
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.19/jquery-ui.min.js"></script>
 
-    <!-- scripts concatenated and minified via build script -->
-    <script src="/js/plugins.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/mylibs/jquery-notifiR-1.0.js"></script>
-    <script>        
-        $.notifiR({ msg: 'test', type: 'instruct', title: 'notifiR' });
-
-        var s = "{\"test\":\"one\"}";
-        var j = $.parseJSON(s);
-
-        $.each(j, function (key, val) {
-            console.log(key);
-            console.log(val);
-        });
-
-    </script>
-
-    <!-- end scripts -->
-    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
+    <!-- scripts concatenated and minified via build script -->    
+    <script src="/js/libs/jquery.snippet.js"></script>
     <script>
-        var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-        (function (d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        } (document, 'script'));
-  </script>
+        $(function () {
+            $('pre.csharp').snippet('csharp', { clipboard: "/js/libs/zeroClipboard.swf" });
+            $('pre.single').snippet('csharp', {  });
+        });
+    </script>
 
 </body>
 </html>

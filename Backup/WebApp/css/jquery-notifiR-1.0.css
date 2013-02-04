@@ -1,0 +1,2 @@
+﻿.notifiR-modal{ width: 100%; position: fixed; top: 0; left: 0; background: #000; filter: Alpha(Opacity=30); opacity: .3; }
+.notifiR{ width: auto; height: auto; position: fixed; bottom: 0; left: 0; background: red; color: #fff; padding: 10px; }
